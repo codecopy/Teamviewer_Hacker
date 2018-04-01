@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Teamviewer_Hacker
 {
@@ -52,9 +53,44 @@ namespace Teamviewer_Hacker
             switch (attack)
             {
                 case 6:
-
-                default:
+                    Console.WriteLine("Contacting IP servers... ");
+                    Thread.Sleep(2000);
                     break;
+                default:
+                    Console.WriteLine("Preparing attacks...");
+                    Thread.Sleep(2000);
+                    break;
+            }
+
+            int[] receivedPackets = {1000, 500, 250, 125, 63, 32, 16, 8, 4, 2, 1, 0};
+
+            // Run attacks
+            bool Break = true;
+            int i = 0;
+            while (Break == true)
+            {
+                try
+                {
+                    Console.WriteLine("Sending 1000 packets of size 4096 MB to Teamviewer ID " + id);
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Received " + receivedPackets[i] + " packets");
+                    Thread.Sleep(500);
+                    i += 1;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Received 0 packets");
+                    Thread.Sleep(500);
+                    Break = false;
+                    // empty
+                }
+            }
+            while (true)
+            {
+                Console.WriteLine("Sending 1000 packets of size 4096 MB to Teamviewer ID " + id);
+                Thread.Sleep(1000);
+                Console.WriteLine("Received 0 packets");
+                Thread.Sleep(500);
             }
         }
     }
