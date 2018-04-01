@@ -1,6 +1,6 @@
 # Teamviewer_Hacker
 
-![Screenshot](https://imgur.com/a/I2tnA)
+![Screenshot](https://i.imgur.com/E6pgDVa.png)
 
 Hack people's Teamviewer accounts!
 
